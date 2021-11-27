@@ -149,6 +149,12 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
             // Log and ignore for it is not the madatory constants.
             Log.i(TAG, "ERROR: " + e.getMessage());
         }
+        try {
+            constants.put("printerMode", getPrinterMode());
+        } catch (Exception e) {
+            // Log and ignore for it is not the madatory constants.
+            Log.i(TAG, "ERROR: " + e.getMessage());
+        }
 
         return constants;
     }
@@ -300,6 +306,66 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
         //Caution: This method is not fully test -- Januslo 2018-08-11
         final IWoyouService printerService = woyouService;
         return printerService.getPrinterModal();
+    }
+
+    /**
+     * Printer Mode
+     */
+    @ReactMethod
+    public void getPrinterMode(final Promise p) {
+        try {
+            p.resolve(getPrinterMode());
+        } catch (Exception e) {
+            Log.i(TAG, "ERROR: " + e.getMessage());
+            p.reject("" + 0, e.getMessage());
+        }
+    }
+
+    private int getPrinterMode() throws Exception {
+        //Caution: This method is not fully test -- Januslo 2018-08-11
+        //Added by Jimmy 11/28/2021
+        final IWoyouService printerService = woyouService;
+        return printerService.getPrinterMode();
+    }
+
+    /**
+     * locate the next label for printing
+     */
+    @ReactMethod
+    public void labelLocate(final Promise p) {
+        try {
+            p.resolve(labelLocate());
+        } catch (Exception e) {
+            Log.i(TAG, "ERROR: " + e.getMessage());
+            p.reject("" + 0, e.getMessage());
+        }
+    }
+
+    private void labelLocate() throws Exception {
+        //Caution: This method is not fully test -- Januslo 2018-08-11
+        //Added by Jimmy 11/28/2021
+        final IWoyouService printerService = woyouService;
+        return printerService.labelLocate();
+    }
+
+    /**
+     * output all the labels
+     */
+    @ReactMethod
+    public void labelOutput(final Promise p) {
+        try {
+            p.resolve(labelOutput());
+        } catch (Exception e) {
+            Log.i(TAG, "ERROR: " + e.getMessage());
+            p.reject("" + 0, e.getMessage());
+        }
+    }
+
+    private int labelOutput() throws Exception {
+        //Caution: This method is not fully test -- Januslo 2018-08-11
+        //Added by Jimmy 11/28/2021
+        final IWoyouService printerService = woyouService;
+        return printerService.labelOutput();
     }
 
     @ReactMethod
