@@ -345,7 +345,8 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
         //Caution: This method is not fully test -- Januslo 2018-08-11
         //Added by Jimmy 11/28/2021
         final IWoyouService printerService = woyouService;
-        return printerService.labelLocate();
+        printerService.labelLocate();
+        return;
     }
 
     /**
@@ -361,11 +362,12 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
         }
     }
 
-    private int labelOutput() throws Exception {
+    private void labelOutput() throws Exception {
         //Caution: This method is not fully test -- Januslo 2018-08-11
         //Added by Jimmy 11/28/2021
         final IWoyouService printerService = woyouService;
-        return printerService.labelOutput();
+        printerService.labelOutput();
+        return;
     }
 
     @ReactMethod
