@@ -334,7 +334,8 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void labelLocate(final Promise p) {
         try {
-            p.resolve(labelLocate());
+            labelLocate()
+            p.resolve();
         } catch (Exception e) {
             Log.i(TAG, "ERROR: " + e.getMessage());
             p.reject("" + 0, e.getMessage());
@@ -346,7 +347,6 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
         //Added by Jimmy 11/28/2021
         final IWoyouService printerService = woyouService;
         printerService.labelLocate();
-        return;
     }
 
     /**
@@ -355,7 +355,8 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void labelOutput(final Promise p) {
         try {
-            p.resolve(labelOutput());
+            labelOutput()
+            p.resolve();
         } catch (Exception e) {
             Log.i(TAG, "ERROR: " + e.getMessage());
             p.reject("" + 0, e.getMessage());
@@ -367,7 +368,6 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
         //Added by Jimmy 11/28/2021
         final IWoyouService printerService = woyouService;
         printerService.labelOutput();
-        return;
     }
 
     @ReactMethod
