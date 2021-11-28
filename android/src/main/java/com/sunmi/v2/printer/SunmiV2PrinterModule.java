@@ -337,7 +337,7 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
             labelLocate();
         } catch (Exception e) {
             Log.i(TAG, "ERROR: " + e.getMessage());
-            throw ("" + 0, e.getMessage());
+            throws("" + 0, e.getMessage());
         }
     }
 
@@ -357,7 +357,7 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
             labelOutput();
         } catch (Exception e) {
             Log.i(TAG, "ERROR: " + e.getMessage());
-            p.reject("" + 0, e.getMessage());
+            throws("" + 0, e.getMessage());
         }
     }
 
