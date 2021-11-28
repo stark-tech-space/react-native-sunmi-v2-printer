@@ -334,7 +334,7 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void labelLocate(final Promise p) {
         try {
-            labelLocate()
+            labelLocate();
             p.resolve();
         } catch (Exception e) {
             Log.i(TAG, "ERROR: " + e.getMessage());
@@ -355,7 +355,7 @@ public class SunmiV2PrinterModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void labelOutput(final Promise p) {
         try {
-            labelOutput()
+            labelOutput();
             p.resolve();
         } catch (Exception e) {
             Log.i(TAG, "ERROR: " + e.getMessage());
